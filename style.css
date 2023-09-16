@@ -1,0 +1,100 @@
+body {
+	background-color:rosybrown ;
+	height: 100vh;
+	font-family: Lato;
+	
+	color: white;
+	
+}
+#content {
+	text-align: center;
+	padding-top: 3%;
+	text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+				 0px 8px 13px rgba(0,0,0,0.1),
+				 0px 18px 23px rgba(0,0,0,0.1);
+}
+h1 {
+	font-weight: 700;
+	font-size: 3em;
+}
+a{
+    color: purple;
+    /* text-decoration: none; */
+}
+html {
+	height: 100%;
+}
+hr {
+	width: 700px;
+	border-top: 1px solid #f8f8f8;
+	border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+*::before,
+*::after {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+:root {
+  --total-time: 10s;
+  --coffe-delay: calc(var(--total-time) / 3.5);
+  --coffe-time: calc(var(--total-time) / 4);
+  --cup-delay: calc(var(--total-time) / 2.7);
+  --cup-time: calc(var(--total-time) / 3);
+  --under-delay: calc(var(--total-time) / 1.5);
+  --under-time: calc(var(--total-time) / 3.75);
+}
+
+
+
+.container2 {
+  width: 340px;
+  height: 340px;
+  position: absolute;
+  right: 40%;
+}
+
+.coffee {
+  fill: #d3935b;
+  opacity: 0;
+  animation: anim var(--coffe-time) linear var(--coffe-delay);
+  animation-fill-mode: forwards;
+}
+
+.cup {
+  fill: #6aa1d1;
+  opacity: 0;
+  animation: anim var(--cup-time) linear var(--cup-delay);
+  animation-fill-mode: forwards;
+}
+
+.under {
+  fill: #d3a5a5;
+  opacity: 0;
+  animation: anim var(--under-time) linear var(--under-delay);
+  animation-fill-mode: forwards;
+}
+
+.line {
+  fill: none;
+  stroke-width: 1;
+  stroke: rgb(78, 78, 78);
+  stroke-dasharray: 1800;
+  stroke-dashoffset: 1800;
+  animation: line var(--total-time) ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes line {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes anim {
+  to {
+    opacity: 1;
+  }
+}
